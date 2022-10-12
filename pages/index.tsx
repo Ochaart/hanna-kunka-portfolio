@@ -1,10 +1,10 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image';
+import Header from '../components/Header'
 
 const Home: NextPage = () => {
   return (
-    <div className="">
+    <div>
       <Head>
         <title>Hanna Kunka Portfolio</title>
         <meta name="description" content="Hanna Kunka Portfolio" />
@@ -12,9 +12,7 @@ const Home: NextPage = () => {
       </Head>
 
       <header>
-        <div className="fixed top-0 w-full mx-auto flex items-center justify-end px-10">
-          <Image src="/svg/hamburger_menu.svg" width={66} height={81} alt="navigation menu" />
-        </div>
+        <Header />
       </header>
 
       <main className="flex flex-col h-[100vh] justify-center">
@@ -25,7 +23,7 @@ const Home: NextPage = () => {
       </main>
 
       <footer>
-        <p className="px-10 fixed bottom-6 font-hindVadodara text-[12px] tracking-wide">Copyright © 2022 Hanna Kunka. All Rights Reserved.</p>
+        <p className="px-4 md:px-10 fixed bottom-6 font-hindVadodara text-[12px] tracking-wide">Copyright © 2022 Hanna Kunka. All Rights Reserved.</p>
       </footer>
     </div>
   )
