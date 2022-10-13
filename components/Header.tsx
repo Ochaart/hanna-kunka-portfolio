@@ -16,7 +16,7 @@ const Header = () => {
   }
 
   return (
-    <div>
+    <>
       <div className="fixed top-0 w-full mx-auto flex items-center justify-end px-4 md:px-10">
         <button onClick={openModal}>
           <Image src="/svg/hamburger_menu.svg" width={66} height={81} alt="navigation menu" />
@@ -38,17 +38,17 @@ const Header = () => {
               <ul className="flex flex-col space-y-5">
                 <li>
                   <Link href="/">
-                    <a className="hover:text-gray-500">HOME</a>
+                    <a onClick={closeModal} className="hover:text-gray-500">HOME</a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/about">
-                    <a className='hover:text-gray-500'>ABOUT</a>
+                    <a onClick={closeModal} className='hover:text-gray-500'>ABOUT</a>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/get-in-touch">
-                    <a className='hover:text-gray-500'>GET IN TOUCH</a>
+                  <Link href="mailto:kunkahanna@gmail.com">
+                    <a target="_blank" className="font-montserrat text-md hover:text-gray-500 max-w-[250px]">GET IN TOUCH</a>
                   </Link>
                 </li>
               </ul>
@@ -58,7 +58,7 @@ const Header = () => {
               <ul className="flex flex-col space-y-5">
                 <li>
                   <Link href="/nappe">
-                    <a className="hover:text-gray-500">NAPPE</a>
+                    <a onClick={closeModal} className="hover:text-gray-500">NAPPE</a>
                   </Link>
                 </li>
               </ul>
@@ -66,7 +66,7 @@ const Header = () => {
           </motion.div>
         </div>
       </NavModal>
-    </div>
+    </>
   )
 }
 

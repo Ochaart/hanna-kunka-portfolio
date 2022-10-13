@@ -1,6 +1,6 @@
 import ReactDom from 'react-dom'
 import { motion } from 'framer-motion'
-import { menuVariants } from '../variants/variants';
+import { menuVariants, mobileMenuVariants } from '../variants/variants';
 import React, { useState, useEffect, forwardRef, useImperativeHandle } from 'react'
 
 interface NavModalProps {
@@ -19,17 +19,30 @@ const NavModal = ({ children, overlayStyles, isOpen }: NavModalProps) => {
   if (!portal) return null
 
   return ReactDom.createPortal(
-    <div className="relative">
-      <motion.div
-        initial={false}
-        className={overlayStyles}
-        variants={menuVariants}
-        animate={isOpen ? "opened" : "closed"}
-        transition={{ ease: "easeOut", duration: .4 }}
-      >
-        {children}
-      </motion.div>
-    </div>,
+    <>
+      <div className="hidden md:block relative">
+        <motion.div
+          initial={false}
+          className={overlayStyles}
+          variants={menuVariants}
+          animate={isOpen ? "opened" : "closed"}
+          transition={{ ease: "easeOut", duration: .4 }}
+        >
+          {children}
+        </motion.div>
+      </div>
+      <div className="block md:hidden relative">
+        <motion.div
+          initial={false}
+          className={overlayStyles}
+          variants={mobileMenuVariants}
+          animate={isOpen ? "opened" : "closed"}
+          transition={{ ease: "easeOut", duration: .4 }}
+        >
+          {children}
+        </motion.div>
+      </div>
+    </>,
     portal
   )
 }
