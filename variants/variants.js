@@ -1,6 +1,6 @@
 export const menuVariants = {
   opened: {
-    height: "50vh"
+    height: "8vh"
   },
   closed: {
     height: "0"

@@ -22,8 +22,9 @@ const About = () => {
           variants={upVariants}
           className="flex flex-col text-[18px] md:text-[24px] max-w-[473px] md:max-w-[541px] space-y-10 md:space-y-20"
         >
+          <p className="text-[28px]">Hej!</p>
           <p className="text-justify">
-            I’m Hanna. I’m a UX designer based in New York City. Originally, I’m from Poland, but grew up in Sweden. My background is in fashion design and technology. I learned that User Experience is the key to making fashion and technology work together. I love creating modern and accessible experiences and researching the psychology behind a user’s actions in hopes of making their everyday interactions easier. I also believe that traveling is an incredibly rewarding and enriching experience. Meeting new people, experiencing new cultures, and appreciating new aesthetics helped me grow both personally and professionally. Living abroad made me an open and creative person.
+            I am a UX designer based in New York City. Born in Poland and grew up in Sweden. My background is in fashion design and technology. I belive the connection between creative thinking and technology is essential in buliding a better user experience for all  people. I love creating modern, accessible experiences, and researching the psychology behind a user’s actions in hopes of improving the accessibility for everyday life.
           </p>
           <div className="flex flex-col md:space-y-5">
             <p>
