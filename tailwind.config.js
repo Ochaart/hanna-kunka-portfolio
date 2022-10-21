@@ -6,6 +6,7 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
+      italiana: 'Italiana',
       bebasNeue: 'Bebas Neue',
       hindVadodara: 'Hind Vadodara'
     },

@@ -43,3 +43,23 @@ a {
 button {
   outline: none;
 }
+
+.padding {
+  @apply px-12 xl:px-36;
+}
+
+.gap-y {
+  @apply gap-y-20 md:gap-y-32
+}
+
+.copy-h2 {
+  @apply text-[28px] md:text-[64px] leading-none font-bebasNeue;
+}
+
+.copy-p {
+  @apply text-[16px] md:text-[32px];
+}
+
+.copy-body {
+  @apply text-[18px] md:text-[40px] text-justify;
+}

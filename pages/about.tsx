@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Header from '../components/Header';
 import Link from 'next/link';
 import { upVariants, downVariants, aboutContainerVariants } from '../variants/variants';
 import { motion } from 'framer-motion';
@@ -7,9 +6,6 @@ import { motion } from 'framer-motion';
 const About = () => {
   return (
     <>
-      <header>
-        <Header />
-      </header>
       <div className="min-h-[1px]" />
       <motion.main
         variants={aboutContainerVariants}

@@ -7,9 +7,10 @@ interface NavModalProps {
   children: React.ReactNode;
   overlayStyles: string;
   isOpen: boolean;
+  navBar: React.ReactNode;
 }
 
-const NavModal = ({ children, overlayStyles, isOpen }: NavModalProps) => {
+const NavModal = ({ navBar, children, overlayStyles, isOpen }: NavModalProps) => {
   const [portal, setPortal] = useState<any>(null);
 
   useEffect(() => {
@@ -20,6 +21,7 @@ const NavModal = ({ children, overlayStyles, isOpen }: NavModalProps) => {
 
   return ReactDom.createPortal(
     <>
+      {navBar}
       <div className="hidden md:block relative">
         <motion.div
           initial={false}

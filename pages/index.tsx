@@ -1,13 +1,9 @@
 import type { NextPage } from 'next';
 import { motion } from 'framer-motion';
-import Header from '../components/Header';
 
 const Home: NextPage = () => {
   return (
-    <div className="h-[100vh] relative">
-      <header>
-        <Header />
-      </header>
+    <div className="h-[100vh]">
       <motion.main
         initial={{
           opacity: 0
