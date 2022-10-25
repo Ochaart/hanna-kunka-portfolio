@@ -45,7 +45,7 @@ button {
 }
 
 .padding {
-  @apply px-12 xl:px-36;
+  @apply px-12 xl:px-64;
 }
 
 .gap-y {
