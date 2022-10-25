@@ -3,6 +3,7 @@ import Head from 'next/head';
 import type { AppProps } from 'next/app';
 import Header from '../components/header/header';
 import { AnimatePresence } from 'framer-motion';
+import { RealViewportProvider } from "next-real-viewport";
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   const key = router.route
@@ -18,7 +19,9 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         <Header />
       </header>
       <AnimatePresence mode="wait" onExitComplete={() => window.scrollTo(0, 0)}>
-        <Component {...pageProps} key={key} />
+        <RealViewportProvider>
+          <Component {...pageProps} key={key} />
+        </RealViewportProvider>
       </AnimatePresence>
     </div>
   )

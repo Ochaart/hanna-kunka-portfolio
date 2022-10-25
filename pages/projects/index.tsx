@@ -1,10 +1,20 @@
 import Link from "next/link";
 import { motion } from 'framer-motion';
 import { projectsVariants } from "../../variants/variants";
+import { useRealViewport } from "next-real-viewport";
 
 const Projects = () => {
+  const { vh } = useRealViewport();
+
+  if (!vh) {
+    return
+  }
+
   return (
-    <div className="overflow-hidden flex flex-col items-center h-[100vh] justify-center">
+    <div
+      style={{ height: vh * 100 }}
+      className="overflow-hidden flex flex-col items-center justify-center"
+    >
       <motion.div
         variants={projectsVariants}
         animate="animate"

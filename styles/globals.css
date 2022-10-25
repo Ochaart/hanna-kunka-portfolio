@@ -10,10 +10,13 @@ body {
   height: 100%;
   width: 100%;
   font-family: Hind Vadodara;
+  display: block;
 }
 
-body {
-  display: block;
+.responsiveHeight {
+  min-height: 100vh;
+  min-height: fill-available;
+  min-height: -webkit-fill-available;
 }
 
 a {

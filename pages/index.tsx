@@ -1,9 +1,15 @@
-import type { NextPage } from 'next';
 import { motion } from 'framer-motion';
+import { useRealViewport } from "next-real-viewport";
 
-const Home: NextPage = () => {
+const Home = () => {
+  const { vh } = useRealViewport();
+
+  if (!vh) {
+    return
+  }
+
   return (
-    <div className="h-[100vh]">
+    <div style={{ height: vh * 100 }}>
       <motion.main
         initial={{
           opacity: 0
