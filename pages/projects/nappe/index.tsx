@@ -78,20 +78,20 @@ const Nappe = () => {
           </p>
         </motion.div>
         <DiagramQuestion question="How much food would you say your household usually throws away each week?">
-          <Image src="/svg/pie_1.svg" width={1306} height={651} alt="pie chart" />
+          <Image src="/svg/pie_1.svg" width={1044} height={520} alt="pie chart" />
         </DiagramQuestion>
         <DiagramQuestion question="What motivates you to avoid food waste?">
-          <Image src="/svg/pie_2.svg" width={1306} height={651} alt="pie chart" />
+          <Image src="/svg/pie_2.svg" width={1044} height={520} alt="pie chart" />
         </DiagramQuestion>
         <DiagramQuestion
           question="What do you think are the main reasons that food gets wasted in your household?"
         >
-          <Image src="/svg/pie_3.svg" width={1306} height={651} alt="pie chart" />
+          <Image src="/svg/pie_3.svg" width={1044} height={520} alt="pie chart" />
         </DiagramQuestion>
         <DiagramQuestion
           question="How surprised are you by this statement – “if food waste were a country, it would be the third largest emitter of greenhouse gases in the world. Food waste is a huge contributor to climate change.”"
         >
-          <Image src="/svg/pie_4.svg" width={1306} height={651} alt="pie chart" />
+          <Image src="/svg/pie_4.svg" width={1044} height={520} alt="pie chart" />
         </DiagramQuestion>
         <DiagramQuestion
           question="Which of these actions are you currently doing at home? Tick as many as you want."
@@ -114,7 +114,7 @@ const Nappe = () => {
           </p>
         </Concept>
         <Concept title="Colors" caption="Brand Attributes: Earth - friendly, healthy, caring">
-          <div className="flex justify-center pt-10 md:pt-20">
+          <div className="flex justify-center pt-10">
             <Image src="/svg/colors.svg" width={907} height={599} alt="colors palettes" />
           </div>
         </Concept>

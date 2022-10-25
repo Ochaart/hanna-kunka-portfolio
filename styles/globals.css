@@ -49,7 +49,7 @@ button {
 }
 
 .gap-y {
-  @apply gap-y-20 md:gap-y-32
+  @apply gap-y-20 md:gap-y-28
 }
 
 .copy-h2 {
