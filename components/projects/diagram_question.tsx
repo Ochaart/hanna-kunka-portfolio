@@ -14,7 +14,7 @@ const DiagramQuestion = ({ question, children }: DiagramQuestionProps) => {
   const { module, controls: diagramQuestionControls } = useModuleInViewAnimation()
 
   return (
-    <motion.div
+    <motion.section
       ref={module}
       animate={diagramQuestionControls}
       initial="initial"
@@ -25,7 +25,7 @@ const DiagramQuestion = ({ question, children }: DiagramQuestionProps) => {
       <div className="p-8">
         {children}
       </div>
-    </motion.div>
+    </motion.section>
   )
 }
 

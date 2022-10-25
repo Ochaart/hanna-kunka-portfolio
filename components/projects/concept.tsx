@@ -13,7 +13,7 @@ const Concept = ({ title, children, caption }: ConceptProps) => {
   const { module, controls: conceptControls } = useModuleInViewAnimation()
 
   return (
-    <motion.div
+    <motion.section
       ref={module}
       animate={conceptControls}
       initial="initial"
@@ -25,7 +25,7 @@ const Concept = ({ title, children, caption }: ConceptProps) => {
         {caption && (<p className="copy-body">{caption}</p>)}
       </div>
       <div className="copy-body">{children}</div>
-    </motion.div>
+    </motion.section>
   )
 
 }
