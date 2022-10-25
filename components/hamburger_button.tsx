@@ -23,11 +23,13 @@ const MenuButton = ({
   const top = {
     closed: {
       rotate: 0,
-      translateY: 0
+      translateY: 0,
+      stroke: '#000',
     },
     opened: {
       rotate: 45,
-      translateY: 2
+      translateY: 2,
+      stroke: '#FFF',
     }
   };
   const center = {
@@ -42,12 +44,14 @@ const MenuButton = ({
     closed: {
       rotate: 0,
       translateY: 0,
-      translateX: 0
+      translateX: 0,
+      stroke: '#000',
     },
     opened: {
       rotate: -45,
       translateY: -1.1,
       translateX: -0.1,
+      stroke: '#FFF',
     }
   };
   lineProps = {

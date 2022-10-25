@@ -1,7 +1,6 @@
-import NavModal from './NavModal'
-import Image from 'next/image';
+import NavModal from './nav_modal'
 import Link from 'next/link';
-import HamburgerButton from './HamburgurButton';
+import HamburgerButton from './hamburger_button';
 import { useState } from 'react';
 
 const Header = () => {
@@ -15,17 +14,13 @@ const Header = () => {
     setIsModalOpen(false);
   }
 
-  const openModal = () => {
-    setIsModalOpen(true);
-  }
-
   return (
     <NavModal
       navBar={<div className="fixed right-0 top-7 mx-auto flex items-center justify-end px-4 md:px-10">
         <HamburgerButton
           isOpen={isModalOpen}
           onClick={toggleModal}
-          color={isModalOpen ? '#FFFFFF' : '#000000'}
+          transition={{ transition: 'easeInOut' }}
         />
       </div>}
       isOpen={isModalOpen}
@@ -34,17 +29,17 @@ const Header = () => {
       <div className="w-full relative md:h-full flex">
         <ul className="md:pl-16 pt-40 md:pt-0 mx-auto text-white flex flex-col md:flex-row text-[32px] gap-y-5 md:gap-x-10 items-center justify-center">
           <li>
-            <Link href="/">
+            <Link href="/" scroll={false}>
               <a onClick={closeModal} className="hover:text-gray-500">HOME</a>
             </Link>
           </li>
           <li>
-            <Link href="/about">
+            <Link href="/about" scroll={false}>
               <a onClick={closeModal} className='hover:text-gray-500'>ABOUT</a>
             </Link>
           </li>
           <li>
-            <Link href="/projects">
+            <Link href="/projects" scroll={false}>
               <a onClick={closeModal} className="hover:text-gray-500">PROJECTS</a>
             </Link>
           </li>

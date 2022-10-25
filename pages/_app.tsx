@@ -1,7 +1,7 @@
 import '../styles/globals.css';
 import Head from 'next/head';
 import type { AppProps } from 'next/app';
-import Header from '../components/Header';
+import Header from '../components/header';
 import { AnimatePresence } from 'framer-motion';
 
 function MyApp({ Component, pageProps, router }: AppProps) {
@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
       <header>
         <Header />
       </header>
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="wait" onExitComplete={() => window.scrollTo(0, 0)}>
         <Component {...pageProps} key={key} />
       </AnimatePresence>
     </div>
