@@ -1,3 +1,4 @@
+import Iframe from 'react-iframe';
 import Hero from '../../../components/projects/hero';
 import Image from 'next/image';
 import DiagramQuestion from '../../../components/projects/diagram_question';
@@ -6,6 +7,7 @@ import { motion } from 'framer-motion';
 import useHasMounted from '../../../hooks/use_has_mounted'
 import { moduleVariants } from '../../../variants/variants'
 import useModuleInViewAnimation from '../../../hooks/use_module_in_view_animation'
+
 
 const SKETCHES = [
   '/images/sketch_1.png',
@@ -124,21 +126,37 @@ const Nappe = () => {
         <Concept title="Low Fidelity Sketches">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-y-5 items-center justify-center">
             {SKETCHES.map((src, i) => (
-              <Image src={src} width={334} height={486} alt={`low fidelity sketch ${i}`} key={`low-fidelity-sketch-${i}`} />
+              <div key={`low-fidelity-sketch-${i}`} className="max-w-[334px] max-h-[486px]">
+                <Image src={src} width={334} height={486} alt={`low fidelity sketch ${i}`} />
+              </div>
             ))}
           </div>
         </Concept>
         <Concept title="High Fidelity Design">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-y-5 justitems-center justify-center">
             {DESIGN.map((src, i) => (
-              <Image src={src} width={319} height={634} alt={`High Fidelity Design ${i}`} key={`high-fidelity-design-${i}`} />
+              <div key={`high-fidelity-design-${i}`} className="max-w-[319px] max-h-[634px]">
+                <Image src={src} width={319} height={634} alt={`High Fidelity Design ${i}`} />
+              </div>
             ))}
-            <div className="md:col-start-2">
+            <div className="md:col-start-2 max-w-[319px] max-h-[634px]">
               <Image src="/images/design_9.png" width={319} height={634} alt="High Fidelity Design 9" />
             </div>
-            <div className="md:col-start-3">
+            <div className="md:col-start-3 max-w-[319px] max-h-[634px]">
               <Image src="/images/design_10.png" width={319} height={634} alt="High Fidelity Design 10" />
             </div>
+          </div>
+        </Concept>
+        <Concept title="Sample Video">
+          <div className="grid items-center md:justify-center relative w-full h-[600px] md:h-[800px]">
+            <Iframe url="https://www.youtube.com/embed/Z8UGt_ue_a8"
+              width="100%"
+              height="100%"
+              className="top-0 left-0"
+              display="block"
+              position="absolute"
+              allowFullScreen
+            />
           </div>
         </Concept>
       </main>
