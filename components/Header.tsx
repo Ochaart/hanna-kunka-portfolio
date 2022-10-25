@@ -1,11 +1,15 @@
 import NavModal from './NavModal'
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import HamburgerButton from './HamburgurButton';
 import { useState } from 'react';
 
 const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  }
 
   const closeModal = () => {
     setIsModalOpen(false);
@@ -17,10 +21,12 @@ const Header = () => {
 
   return (
     <NavModal
-      navBar={<div className="fixed top-0 w-full mx-auto flex items-center justify-end px-4 md:px-10">
-        <button onClick={openModal}>
-          <Image src="/svg/hamburger_menu.svg" width={66} height={81} alt="navigation menu" />
-        </button>
+      navBar={<div className="fixed right-0 top-7 mx-auto flex items-center justify-end px-4 md:px-10">
+        <HamburgerButton
+          isOpen={isModalOpen}
+          onClick={toggleModal}
+          color={isModalOpen ? '#FFFFFF' : '#000000'}
+        />
       </div>}
       isOpen={isModalOpen}
       overlayStyles="fixed bg-gray-900 top-0 left-0 w-[100vw] overflow-hidden"
@@ -43,7 +49,6 @@ const Header = () => {
             </Link>
           </li>
         </ul>
-        <button className="text-white absolute text-[20px] right-10 md:right-16 top-7" onClick={closeModal}>✕</button>
       </div>
     </NavModal>
   )

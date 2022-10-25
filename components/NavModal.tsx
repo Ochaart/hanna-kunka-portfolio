@@ -21,7 +21,6 @@ const NavModal = ({ navBar, children, overlayStyles, isOpen }: NavModalProps) =>
 
   return ReactDom.createPortal(
     <>
-      {navBar}
       <div className="hidden md:block relative">
         <motion.div
           initial={false}
@@ -44,6 +43,7 @@ const NavModal = ({ navBar, children, overlayStyles, isOpen }: NavModalProps) =>
           {children}
         </motion.div>
       </div>
+      {navBar}
     </>,
     portal
   )
