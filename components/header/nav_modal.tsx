@@ -1,6 +1,6 @@
 import ReactDom from 'react-dom'
 import { motion } from 'framer-motion'
-import { menuVariants, mobileMenuVariants } from '../variants/variants';
+import { menuVariants, mobileMenuVariants } from '../../variants/variants';
 import React, { useState, useEffect, forwardRef, useImperativeHandle } from 'react'
 
 interface NavModalProps {
