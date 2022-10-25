@@ -1,7 +1,7 @@
 import '../styles/globals.css';
 import Head from 'next/head';
 import type { AppProps } from 'next/app';
-import Header from '../components/header';
+import Header from '../components/header/header';
 import { AnimatePresence } from 'framer-motion';
 
 function MyApp({ Component, pageProps, router }: AppProps) {

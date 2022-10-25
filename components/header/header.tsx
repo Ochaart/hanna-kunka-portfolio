@@ -1,6 +1,6 @@
-import NavModal from './nav_modal'
+import NavModal from '../nav_modal'
 import Link from 'next/link';
-import HamburgerButton from './hamburger_button';
+import HamburgerButton from '../hamburger_button';
 import { useState } from 'react';
 
 const Header = () => {
