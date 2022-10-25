@@ -10,14 +10,12 @@ interface HeroProps {
   title: string,
   caption: string,
   summary: string,
-  problem: string,
 }
 
 const CONTAINER = 'flex flex-col gap-y-2 md:gap-y-5'
 
-const Hero = ({ roles, skills, duration, title, caption, summary, problem }: HeroProps) => {
+const Hero = ({ roles, skills, duration, title, caption, summary }: HeroProps) => {
   const { module: roleDurationSkillsModule, controls: roleDurationSkillsControls } = useModuleInViewAnimation()
-  const { module: problemModule, controls: problemControls } = useModuleInViewAnimation()
 
   return (
     <section className="flex flex-col items-center justify-center gap-y">
@@ -62,15 +60,6 @@ const Hero = ({ roles, skills, duration, title, caption, summary, problem }: Her
           </div>
         </div>
       </motion.div>
-      <motion.p
-        ref={problemModule}
-        animate={problemControls}
-        initial="initial"
-        variants={moduleVariants}
-        className='copy-body padding'
-      >
-        {problem}
-      </motion.p>
     </section>
   )
 }

@@ -24,7 +24,7 @@ const Concept = ({ title, children, caption }: ConceptProps) => {
         <h3 className="copy-h2">{title}</h3>
         {caption && (<p className="copy-body">{caption}</p>)}
       </div>
-      <p className="copy-body">{children}</p>
+      <div className="copy-body">{children}</div>
     </motion.div>
   )
 
