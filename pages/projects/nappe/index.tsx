@@ -3,8 +3,19 @@ import Image from 'next/image';
 import DiagramQuestion from '../../../components/projects/diagram_question';
 import Concept from '../../../components/projects/concept';
 import { motion } from 'framer-motion';
+import useHasMounted from '../../../hooks/use_has_mounted'
+import { moduleVariants } from '../../../variants/variants'
+import useModuleInViewAnimation from '../../../hooks/use_module_in_view_animation'
+
 
 const Nappe = () => {
+  const { module, controls: diagramQuestionControls } = useModuleInViewAnimation()
+  const hasMounted = useHasMounted();
+
+  if (!hasMounted) {
+    return;
+  }
+
   return (
     <motion.div
       initial={{
@@ -28,12 +39,18 @@ const Nappe = () => {
           duration="6 x 2 - Week Sprints"
           problem='After interviewing people I got a better understanding of food waste. From the consumer’s perspective, there are many reasons for wasting food: overlooking the expiry date, perishable food, too much shopping, too large portions of meals.The most important thing is to prevent waste, so that there is not too much food in our home that ends up in the garbage. What can we do?'
         />
-        <div className="padding flex flex-col gap-y-10 md:gap-y-20">
+        <motion.div
+          ref={module}
+          animate={diagramQuestionControls}
+          initial="initial"
+          variants={moduleVariants}
+          className="padding flex flex-col gap-y-10 md:gap-y-20"
+        >
           <h2 className="copy-h2">Diagrams questions and answers</h2>
           <p className="copy-body">
             First step was to understand more about our users. Having data from the intended users and potential users helped me to see from two different sides and elaborate it to the app that should be implement.
           </p>
-        </div>
+        </motion.div>
         <DiagramQuestion question="How much food would you say your household usually throws away each week?">
           <Image src="/svg/pie_1.svg" width={1306} height={651} alt="pie chart" />
         </DiagramQuestion>

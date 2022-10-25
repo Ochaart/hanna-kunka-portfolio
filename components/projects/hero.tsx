@@ -1,4 +1,7 @@
 import cx from 'classnames';
+import { motion } from 'framer-motion';
+import { moduleVariants } from '../../variants/variants'
+import useModuleInViewAnimation from '../../hooks/use_module_in_view_animation'
 
 interface HeroProps {
   roles: string[],
@@ -13,6 +16,9 @@ interface HeroProps {
 const CONTAINER = 'flex flex-col gap-y-2 md:gap-y-5'
 
 const Hero = ({ roles, skills, duration, title, caption, summary, problem }: HeroProps) => {
+  const { module: roleDurationSkillsModule, controls: roleDurationSkillsControls } = useModuleInViewAnimation()
+  const { module: problemModule, controls: problemControls } = useModuleInViewAnimation()
+
   return (
     <section className="flex flex-col items-center justify-center gap-y">
       <div className="bg-[#E3EAD4] py-20 flex flex-col items-center justify-center leading-snug text-center w-full">
@@ -22,7 +28,13 @@ const Hero = ({ roles, skills, duration, title, caption, summary, problem }: Her
       <p className='copy-body padding'>
         {summary}
       </p>
-      <div className={cx('grid grid-cols-2 w-full justify-between gap-x-5', 'padding')}>
+      <motion.div
+        ref={roleDurationSkillsModule}
+        animate={roleDurationSkillsControls}
+        initial="initial"
+        variants={moduleVariants}
+        className={cx('grid grid-cols-2 w-full justify-between gap-x-5', 'padding')}
+      >
         <div className={cx(CONTAINER)}>
           <h2 className="copy-h2">Role</h2>
           <div>
@@ -49,10 +61,16 @@ const Hero = ({ roles, skills, duration, title, caption, summary, problem }: Her
             <p className="copy-p">{duration}</p>
           </div>
         </div>
-      </div>
-      <p className='copy-body padding'>
+      </motion.div>
+      <motion.p
+        ref={problemModule}
+        animate={problemControls}
+        initial="initial"
+        variants={moduleVariants}
+        className='copy-body padding'
+      >
         {problem}
-      </p>
+      </motion.p>
     </section>
   )
 }
