@@ -18,9 +18,9 @@ const Concept = ({ title, children, caption }: ConceptProps) => {
       animate={conceptControls}
       initial="initial"
       variants={moduleVariants}
-      className="flex flex-col padding gap-y-4 md:gap-y-20"
+      className="flex flex-col padding space-y-4 md:space-y-20"
     >
-      <div className="flex flex-col gap-y-4 md:gap-y-20">
+      <div className="flex flex-col space-y-4 md:space-y-20">
         <h3 className="copy-h2">{title}</h3>
         {caption && (<p className="copy-body">{caption}</p>)}
       </div>

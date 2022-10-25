@@ -19,7 +19,7 @@ const DiagramQuestion = ({ question, children }: DiagramQuestionProps) => {
       animate={diagramQuestionControls}
       initial="initial"
       variants={moduleVariants}
-      className="flex flex-col items-center justify-center gap-y-10 md:gap-y-20"
+      className="flex flex-col items-center justify-center space-y-10 md:space-y-20"
     >
       <p className="copy-body text-left self-start padding">{question}</p>
       <div className="p-8">

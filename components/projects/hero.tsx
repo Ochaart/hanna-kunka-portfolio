@@ -12,7 +12,7 @@ interface HeroProps {
   summary: string,
 }
 
-const CONTAINER = 'flex flex-col gap-y-2 md:gap-y-5'
+const CONTAINER = 'flex flex-col space-y-2 md:space-y-5'
 
 const Hero = ({ roles, skills, duration, title, caption, summary }: HeroProps) => {
   const { module: roleDurationSkillsModule, controls: roleDurationSkillsControls } = useModuleInViewAnimation()

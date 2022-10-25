@@ -67,7 +67,7 @@ const Nappe = () => {
           animate={diagramQuestionControls}
           initial="initial"
           variants={moduleVariants}
-          className="padding flex flex-col gap-y-10 md:gap-y-20"
+          className="padding flex flex-col space-y-10 md:space-y-20"
         >
           <h2 className="copy-h2">UX Research</h2>
           <p className="copy-body">
